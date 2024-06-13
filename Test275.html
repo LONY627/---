@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Server</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #2a2a2a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333333;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        .container {
+            padding: 20px;
+        }
+        .server-info {
+            background-color: #444444;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .server-info h2 {
+            margin-top: 0;
+        }
+        .footer {
+            background-color: #333333;
+            padding: 10px;
+            text-align: center;
+        }
+        #serverGraph {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+        }
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1em;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>       🗺 𝐌𝐒-𝟒𝐆 ⛏</h1>
+        <h1>OneBlock Minecraft Server</h1>
+    </header>
+    <div class="container">
+        <div class="server-info">
+            <h2>Server IP:</h2>
+            <p>sports-integration.gl.joinmc.link</p>
+        </div>
+        <div class="server-info">
+            <h2>About Our Server</h2>
+            <p>Welcome to our Minecraft server! We offer a friendly community and exciting gameplay. Join us for survival, creative mode, mini-games, OneBlock, Lifesteel, and more.</p>
+        </div>
+        <div class="server-info">
+            <h2>Rules</h2>
+            <ul>
+                <li>No griefing or stealing</li>
+                <li>Be respectful to other players</li>
+                <li>No cheating or exploiting bugs</li>
+                <li>Kill OpEfath ! "if you get a chance"</li>
+                <li>Kill OpTiger ! "if you get a chance"</li>
+                <li>Have fun!</li>
+            </ul>
+        </div>
+        <div class="server-info">
+            <h2>Join Our Discord</h2>
+            <p>Stay connected with the community and get updates by joining our Discord server: <a href="https://discord.gg/JV3Cd89N" target="_blank">🗺 𝐌𝐒-𝟒𝐆 ⛏</a></p>
+        </div>
+        <div class="server-info" style="position: relative;">
+            <h2>Server Player Count Graph</h2>
+            <div class="button-container">
+                <button onclick="location.href='file-management.html'">Manage Files</button>
+            </div>
+            <canvas id="serverGraph"></canvas>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 🗺 𝐌𝐒-𝟒𝐆 ⛏ Minecraft Server. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const ctx = document.getElementById('serverGraph').getContext('2d');
+        const serverGraph = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Player Count',
+                    data: [12, 19, 3, 5, 2, 3, 7],
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    fill: false,
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
